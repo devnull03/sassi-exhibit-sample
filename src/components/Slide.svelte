@@ -1,6 +1,5 @@
 <script lang="ts">
-  import image1 from "../media/letter1.jpg";
-  import image2 from "../media/letter2.jpg";
+  import {letter1, photo2} from "../images/index";
 
   export let flipped = false;
 
@@ -8,12 +7,12 @@
   export let text = "";
   export let images = [
     {
-      src: image1,
+      src: letter1,
       alt: "Image 1",
       link: "/",
     },
     {
-      src: image2,
+      src: photo2,
       alt: "Image 2",
       link: "/",
     },
@@ -49,21 +48,21 @@
         : 'items-start'} text-white text-2xl font-light lg:text-black lg:text-base lg:font-normal"
       bind:this={infoDiv}
     >
-      <h1 class="text-blur p-2 rounded-md lg:backdrop-blur-sm">{title}</h1>
-      <p class="text-blur p-2 rounded-md lg:backdrop-blur-sm">
+      <h1 class="text-blur p-2 rounded-md lg:backdrop-blur-sm text-6xl pt-20">{title}</h1>
+      <p class="text-blur p-2 rounded-md lg:backdrop-blur-sm text-3xl">
         {text}
       </p>
       <!-- <canvas class="bg-blue-600 rounded-lg border" /> -->
-      <div class="hidden lg:flex">
+      <!-- <div class="hidden lg:flex">
         <slot />
-      </div>
+      </div> -->
     </div>
   {/if}
 
   <div
     class="flex flex-col {flipped
-      ? 'lg:ml-10'
-      : 'lg:mr-10'} sticky lg:relative items-center justify-center lg:pr-3 h-full lg:w-1/2 hover:scale-105 shadow-lg hover:shadow-2xl cursor-pointer transition-all"
+      ? 'lg:ml-5'
+      : 'lg:mr-5'} sticky lg:relative items-center justify-center h-full lg:w-1/2 hover:scale-105 shadow-lg hover:shadow-2xl cursor-pointer transition-all"
     bind:clientHeight={imageHeight}
     bind:this={imageDiv}
   >
