@@ -8,6 +8,8 @@
   viewBox="0 0 73 68"
   fill="none"
   xmlns="http://www.w3.org/2000/svg"
+  class="cursor-pointer hover:transform hover:scale-110 opacity-50 hover:opacity-100 transition-transform duration-300"
+  on:click
 >
   {#if flipped}
     <path

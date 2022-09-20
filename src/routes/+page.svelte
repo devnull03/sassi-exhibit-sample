@@ -48,10 +48,9 @@
     class="rounded-lg border shadow-sm mt-5 w-full h-full"
     src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ_Yz_Nb5KhFQRac_kYxebGAY&key=AIzaSyAFyX2Q-1_b6dJdj4NXGtTlATgG4WVSzXI"
   />
-  <Slide {...slides[1]} />
-
-  <!-- <FullPageSlide /> -->
   <SlideShow />
+
+  <Slide {...slides[1]} />
 
   <DoublePageSlide />
 
