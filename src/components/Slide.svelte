@@ -2,6 +2,7 @@
   import {letter1, photo2} from "../images/index";
 
   export let flipped = false;
+  export let strict = false;
 
   export let title = "Title";
   export let text = "";
@@ -31,13 +32,17 @@
       infoDiv.style.height = `${imageHeight * 2}px`;
       imageDiv.style.top = `${(windowHeight - imageHeight) / 2}px`;
     }
+    if (infoDiv && strict) {
+      infoDiv.style.width = `${windowWidth}px`;
+      // infoDiv.style.height = `${windowHeight}px`;
+    }
   }
 </script>
 
 <svelte:window bind:innerWidth={windowWidth} bind:innerHeight={windowHeight} />
 
 <div
-  class="flex {flipped
+  class="flex snap-start {flipped
     ? 'flex-col-reverse lg:flex-row-reverse'
     : 'flex-col-reverse lg:flex-row'}"
 >

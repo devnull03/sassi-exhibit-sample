@@ -6,6 +6,7 @@
   import SlideShow from "../components/SlideShow.svelte";
   import DoublePageSlide from "../components/DoublePageSlide.svelte";
   import Footer from "../components/Footer.svelte";
+  import HorizontalView from "../components/HorizontalView.svelte";
 
   const slides = [
     {
@@ -37,7 +38,7 @@
   ];
 </script>
 
-<div class="h-screen gap-11">
+<div class="h-screen gap-11 snap-y snap-mandatory">
   <FrontPage />
   <Slide {...slides[0]} />
   <iframe
@@ -46,13 +47,25 @@
     loading="lazy"
     allowfullscreen
     class="rounded-lg border shadow-sm mt-5 w-full h-full"
-    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ_Yz_Nb5KhFQRac_kYxebGAY&key=AIzaSyAFyX2Q-1_b6dJdj4NXGtTlATgG4WVSzXI"
+    src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ_Yz_Nb5KhFQRac_kYxebGAY&key=AIzaSyAFyX2Q-1_b6dJdj4NXGtTlATgG4WVSzXI&zoom=8&maptype=satellite"
   />
   <SlideShow />
 
   <Slide {...slides[1]} />
 
-  <DoublePageSlide />
+  <!-- <div class="flex flex-row overflow-x-scroll snap-mandatory snap-x">
+    <Slide {...slides[0]} strict />
+    <Slide {...slides[0]} strict />
+    <Slide {...slides[0]} strict />
+  </div> -->
 
+  <HorizontalView>
+    
+    <Slide {...slides[0]} strict />
+    <Slide {...slides[0]} strict />
+    <Slide {...slides[0]} strict />
+  </HorizontalView>
+
+  <DoublePageSlide />
   <Footer />
 </div>

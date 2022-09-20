@@ -52,7 +52,7 @@
 </script>
 
 <div
-  class="h-screen flex items-center relative"
+  class="h-screen flex items-center relative snap-start"
   bind:this={mainDiv}
   style="background-image: url({currentImage.src});"
 >
